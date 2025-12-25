@@ -1,0 +1,19 @@
+module top_module(
+    input [31:0] a,
+    input [31:0] b,
+    input sub,
+    output [31:0] sum
+);
+    logic [31:0] c;
+    
+    assign c = b ^ ({32{sub}});
+    
+    logic [15:0] sum1,sum2;
+    logic carry;
+    
+    add16 u1(.a(a[15:0]), .b(c[15:0]), .cin(sub), .cout(carry), .sum(sum1));
+    add16 u2(.a(a[31:16]), .b(c[31:16]), .cin(carry), .cout(), .sum(sum2));
+    
+    assign sum = {sum2,sum1};
+
+endmodule
