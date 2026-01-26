@@ -1,0 +1,62 @@
+module top_module (
+    input clk,
+    input reset,            // Synchronous reset
+    input [7:0] d,
+    output [7:0] q
+);
+    always @(posedge clk) begin
+        q[7] = d[7];
+        if (reset) begin
+            q[7] = 0;
+        end
+    end
+    
+	always @(posedge clk) begin
+        q[6] = d[6];
+        if (reset) begin
+            q[6] = 0;
+        end
+    end
+    
+    always @(posedge clk) begin
+        q[5] = d[5];
+        if (reset) begin
+            q[5] = 0;
+        end
+    end
+    
+    always @(posedge clk) begin
+        q[4] = d[4];
+        if (reset) begin
+            q[4] = 0;
+        end
+    end
+    
+    always @(posedge clk) begin
+        q[3] = d[3];
+        if (reset) begin
+            q[3] = 0;
+        end
+    end
+    
+    always @(posedge clk) begin
+        q[2] = d[2];
+        if (reset) begin
+            q[2] = 0;
+        end
+    end
+    
+    always @(posedge clk) begin
+        q[1] = d[1];
+        if (reset) begin
+            q[1] = 0;
+        end
+    end
+    
+    always @(posedge clk) begin
+        q[0] = d[0];
+        if (reset) begin
+            q[0] = 0;
+        end
+    end
+endmodule
